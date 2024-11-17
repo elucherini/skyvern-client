@@ -5,6 +5,7 @@ description = "A lightweight Python client for Skyvern"
 authors = ["Eli Lucherini <elucherini@conviva.com>"]
 license = "MIT"
 readme = "README.md"
+packages = [{include = "skyvern-client"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
