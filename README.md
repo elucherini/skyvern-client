@@ -37,3 +37,11 @@ task_payload = {
 
 client.create_task(task_payload)
 ```
+
+## FAQ
+
+#### 1. Do I need an LLM to use this library?
+
+No, but the Skyvern UI uses an LLM to generate the payload for task generation. That functionality will be 
+available soon. For now, I have imported the prompt used by Skyvern in `skyvern-prompts/generate-task.j2`. Feel free to
+prompt your LLM of choice with that prompt and lightly parse the output before calling `create_task`.
