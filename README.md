@@ -45,3 +45,20 @@ client.create_task(task_payload)
 No, but the Skyvern UI uses an LLM to generate the payload for task generation. That functionality will be 
 available soon. For now, I have imported the prompt used by Skyvern in `skyvern-prompts/generate-task.j2`. Feel free to
 prompt your LLM of choice with that prompt and lightly parse the output before calling `create_task`.
+
+#### 2. Where can I find my Skyvern API key?
+
+Go to the Skyvern UI and click on Settings. Locate the "API Keys" section and click on Reveal.
+
+Alternatively, you may want to create a task through a customized prompt with the UI. After submitting and next to the 
+"Run" button, you will find a "cURL" button. This will copy the cURL request to your clipboard and will look like this:
+
+```
+curl 'https://api.skyvern.com/api/v1/tasks' -X POST -H "Content-Type: application/json" -H "x-api-key: abcde321.abcde1234.edabc321" --data-binary '{"title":null,"url":"https://www.target.com","webhook_callback_url":null,"navigation_goal":null,"data_extraction_goal":null,"proxy_location":"RESIDENTIAL","navigation_payload":"null","extracted_information_schema":null,"totp_verification_url":null,"totp_identifier":null,"error_code_mapping":null}'
+```
+
+Use a text editor to extract the value of `x-api-key`.
+
+#### 3. Does this library work with Cloud or self-hosted Skyvern?
+
+Both!
