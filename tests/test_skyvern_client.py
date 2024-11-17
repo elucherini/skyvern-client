@@ -9,7 +9,7 @@ class TestSkyvernClient:
     @pytest.fixture
     def client(self):
         load_dotenv()
-        return SkyvernClient("http://localhost:8000", os.getenv("SKYVERN_API_KEY"))
+        return SkyvernClient("http://localhost:8000")
 
     def test_list_tasks(self, client):
         try:
