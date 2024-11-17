@@ -1,9 +1,17 @@
 # skyvern-client
 A lightweight Python-based Skyvern client
 
-## Usage
+## Setup
+- [Install poetry](https://python-poetry.org/docs/#installation)
+- Clone the repo and install dependencies:
+```bash
+git clone git@github.com:elucherini/skyvern-client.git
+cd skyvern-client
+poetry install
+```
 - Create a `.env` file in the root with your Skyvern API key. An example is provided in `.env_example`.
-- Use this library!
+
+## Usage
 
 ```python
 from dotenv import load_dotenv
