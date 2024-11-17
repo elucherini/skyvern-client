@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 
 class SkyvernClient:
-    def __init__(self, base_url, api_key):
+    def __init__(self, base_url, api_key=None):
         """
         Initialize the SkyvernAPI with base URL and API key.
 
@@ -20,7 +20,7 @@ class SkyvernClient:
         :param api_key: The API key for authentication.
         """
         self.base_url = base_url
-        self.api_key = api_key
+        self.api_key = api_key or os.getenv("SKYVERN_API_KEY")
         self.base_endpoint = f"{base_url}/api/v1"
         self.headers = self._get_headers()
 
@@ -152,7 +152,7 @@ class SkyvernClient:
 if __name__ == "__main__":
     # Initialize client; use https://api.skyvern.com/ for the cloud-hosted skyvern
     load_dotenv()
-    client = SkyvernClient("http://localhost:8000", os.getenv("SKYVERN_API_KEY"))
+    client = SkyvernClient("http://localhost:8000")
 
     # Retrieve all tasks
     all_tasks = client.list_tasks()
